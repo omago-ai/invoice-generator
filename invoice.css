@@ -1,0 +1,231 @@
+/* ========================================
+   Invoice Preview & PDF Styles
+   ======================================== */
+
+.invoice {
+  --inv-accent: #1a1a2e;
+  --inv-accent-light: rgba(26, 26, 46, 0.06);
+  --inv-accent-border: rgba(26, 26, 46, 0.2);
+  --inv-text: #1a1a1a;
+  --inv-text-secondary: #666;
+  --inv-text-tertiary: #999;
+
+  width: 100%;
+  padding: 40px 36px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--inv-text);
+  background: #fff;
+}
+
+/* Header: Logo + INVOICE title */
+.inv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.inv-logo img {
+  max-width: 140px;
+  max-height: 48px;
+  object-fit: contain;
+}
+
+.inv-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--inv-accent);
+  text-align: right;
+}
+
+/* Parties: From + Bill To */
+.inv-parties {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 28px;
+}
+
+.inv-party {
+  flex: 1;
+}
+
+.inv-party-label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--inv-text-tertiary);
+  margin-bottom: 6px;
+}
+
+.inv-party-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--inv-text);
+  margin-bottom: 2px;
+}
+
+.inv-party-detail {
+  font-size: 11px;
+  color: var(--inv-text-secondary);
+  white-space: pre-line;
+}
+
+/* Invoice Meta (number, date, due date) */
+.inv-meta {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 28px;
+  padding: 12px 16px;
+  background: var(--inv-accent-light);
+  border-radius: 6px;
+}
+
+.inv-meta-item {
+  flex: 1;
+}
+
+.inv-meta-label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--inv-text-tertiary);
+  margin-bottom: 2px;
+}
+
+.inv-meta-value {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--inv-text);
+}
+
+/* Line Items Table */
+.inv-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+
+.inv-table thead th {
+  padding: 10px 12px;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: var(--inv-accent);
+  text-align: left;
+}
+
+.inv-table thead th:last-child {
+  text-align: right;
+}
+
+.inv-table thead th:nth-child(2),
+.inv-table thead th:nth-child(3) {
+  text-align: center;
+}
+
+.inv-table tbody td {
+  padding: 10px 12px;
+  font-size: 11px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.inv-table tbody td:last-child {
+  text-align: right;
+  font-weight: 500;
+}
+
+.inv-table tbody td:nth-child(2),
+.inv-table tbody td:nth-child(3) {
+  text-align: center;
+}
+
+.inv-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Totals */
+.inv-totals {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 28px;
+}
+
+.inv-totals-table {
+  width: 220px;
+}
+
+.inv-totals-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 11px;
+  color: var(--inv-text-secondary);
+}
+
+.inv-totals-row.total {
+  border-top: 2px solid var(--inv-accent);
+  margin-top: 6px;
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--inv-text);
+}
+
+.inv-totals-label {
+  font-weight: 500;
+}
+
+/* Notes */
+.inv-notes {
+  border-top: 1px solid var(--inv-accent-border);
+  padding-top: 16px;
+  margin-top: 8px;
+}
+
+.inv-notes-label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--inv-text-tertiary);
+  margin-bottom: 4px;
+}
+
+.inv-notes-text {
+  font-size: 10px;
+  color: var(--inv-text-secondary);
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+/* Footer */
+.inv-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 9px;
+  color: var(--inv-text-tertiary);
+}
+
+/* Advanced fields in preview */
+.inv-advanced-meta {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+  font-size: 10px;
+}
+
+.inv-advanced-item .inv-meta-label {
+  margin-bottom: 1px;
+}
+
+.inv-advanced-item .inv-meta-value {
+  font-size: 11px;
+}
