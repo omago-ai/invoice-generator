@@ -322,13 +322,13 @@ function updatePreview() {
     <div class="inv-parties">
       <div class="inv-party">
         <div class="inv-party-label">From</div>
-        <div class="inv-party-name">${escapeHtml($('fromName').value) || ''}</div>
+        <div class="inv-party-name">${escapeHtml($('fromName').value) || '<span style="color:#ccc">Your Company</span>'}</div>
         <div class="inv-party-detail">${escapeHtml($('fromAddress').value) || ''}</div>
         <div class="inv-party-detail">${escapeHtml($('fromEmail').value) || ''}</div>
       </div>
       <div class="inv-party">
         <div class="inv-party-label">Bill To</div>
-        <div class="inv-party-name">${escapeHtml($('toName').value) || ''}</div>
+        <div class="inv-party-name">${escapeHtml($('toName').value) || '<span style="color:#ccc">Client Name</span>'}</div>
         <div class="inv-party-detail">${escapeHtml($('toAddress').value) || ''}</div>
         <div class="inv-party-detail">${escapeHtml($('toEmail').value) || ''}</div>
       </div>

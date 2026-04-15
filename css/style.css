@@ -455,3 +455,21 @@ input[type="color"] {
     gap: 4px;
   }
 }
+
+@media print {
+  .form-panel,
+  .preview-label {
+    display: none !important;
+  }
+  .preview-panel {
+    padding: 0;
+  }
+  .preview-frame {
+    box-shadow: none;
+    border-radius: 0;
+    aspect-ratio: auto;
+  }
+  .app {
+    display: block;
+  }
+}
