@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator — Create Beautiful Invoices Instantly</title>
+  <meta name="description" content="Free invoice generator. Create professional invoices and download as PDF. No signup required.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/invoice.css">
+</head>
+<body>
+  <div class="app">
+    <!-- LEFT: Form Panel -->
+    <div class="form-panel">
+      <header class="form-header">
+        <h1>Invoice Generator</h1>
+        <p class="tagline">Create professional invoices in seconds</p>
+      </header>
+
+      <!-- Branding Section -->
+      <section class="form-section">
+        <h2 class="section-title">Branding</h2>
+        <div class="logo-upload" id="logoUpload">
+          <input type="file" id="logoInput" accept="image/png,image/jpeg,image/svg+xml" hidden>
+          <div class="logo-placeholder" id="logoPlaceholder">
+            <span class="logo-icon">+</span>
+            <span class="logo-text">Upload Logo</span>
+            <span class="logo-hint">PNG, JPG, or SVG · Recommended 400×100px</span>
+          </div>
+          <img id="logoPreviewThumb" class="logo-thumb" alt="Logo preview" hidden>
+          <button type="button" id="logoRemove" class="logo-remove" hidden>Remove</button>
+        </div>
+        <div class="field-row">
+          <label class="field-label" for="accentColor">Accent Color</label>
+          <div class="color-picker-wrap">
+            <input type="color" id="accentColor" value="#1a1a2e">
+            <span class="color-hex" id="colorHex">#1a1a2e</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- From Section -->
+      <section class="form-section">
+        <h2 class="section-title">From</h2>
+        <div class="field">
+          <label class="field-label" for="fromName">Name / Company</label>
+          <input type="text" id="fromName" placeholder="Your company name">
+        </div>
+        <div class="field">
+          <label class="field-label" for="fromAddress">Address</label>
+          <textarea id="fromAddress" rows="2" placeholder="Street, City, State, ZIP"></textarea>
+        </div>
+        <div class="field">
+          <label class="field-label" for="fromEmail">Email</label>
+          <input type="email" id="fromEmail" placeholder="you@company.com">
+        </div>
+      </section>
+
+      <!-- Bill To Section -->
+      <section class="form-section">
+        <h2 class="section-title">Bill To</h2>
+        <div class="field">
+          <label class="field-label" for="toName">Name / Company</label>
+          <input type="text" id="toName" placeholder="Client name or company">
+        </div>
+        <div class="field">
+          <label class="field-label" for="toAddress">Address</label>
+          <textarea id="toAddress" rows="2" placeholder="Street, City, State, ZIP"></textarea>
+        </div>
+        <div class="field">
+          <label class="field-label" for="toEmail">Email</label>
+          <input type="email" id="toEmail" placeholder="client@company.com">
+        </div>
+      </section>
+
+      <!-- Invoice Details Section -->
+      <section class="form-section">
+        <h2 class="section-title">Invoice Details</h2>
+        <div class="field-grid">
+          <div class="field">
+            <label class="field-label" for="invoiceNumber">Invoice Number</label>
+            <input type="text" id="invoiceNumber" value="INV-001">
+          </div>
+          <div class="field">
+            <label class="field-label" for="currency">Currency</label>
+            <select id="currency">
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="HKD">HKD (HK$)</option>
+              <option value="CAD">CAD (CA$)</option>
+              <option value="AUD">AUD (A$)</option>
+              <option value="JPY">JPY (¥)</option>
+              <option value="SGD">SGD (S$)</option>
+              <option value="CNY">CNY (¥)</option>
+              <option value="KRW">KRW (₩)</option>
+              <option value="TWD">TWD (NT$)</option>
+              <option value="CHF">CHF (CHF)</option>
+              <option value="NZD">NZD (NZ$)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label" for="invoiceDate">Invoice Date</label>
+            <input type="date" id="invoiceDate">
+          </div>
+          <div class="field">
+            <label class="field-label" for="dueDate">Due Date</label>
+            <input type="date" id="dueDate">
+          </div>
+        </div>
+      </section>
+
+      <!-- Line Items Section -->
+      <section class="form-section">
+        <h2 class="section-title">Line Items</h2>
+        <div class="line-items-header">
+          <span class="li-desc">Description</span>
+          <span class="li-qty">Qty</span>
+          <span class="li-rate">Rate</span>
+          <span class="li-amount">Amount</span>
+          <span class="li-remove"></span>
+        </div>
+        <div id="lineItems">
+          <!-- Line item rows inserted by JS -->
+        </div>
+        <button type="button" id="addLineItem" class="btn-add">+ Add Line Item</button>
+      </section>
+
+      <!-- Totals Section -->
+      <section class="form-section">
+        <div class="totals-form">
+          <div class="field-row">
+            <label class="field-label" for="taxRate">Tax (%)</label>
+            <input type="number" id="taxRate" value="0" min="0" max="100" step="0.01">
+          </div>
+        </div>
+      </section>
+
+      <!-- Advanced Toggle -->
+      <section class="form-section">
+        <button type="button" id="advancedToggle" class="btn-advanced">
+          <span id="advancedArrow">▶</span> Advanced Options
+        </button>
+        <div id="advancedFields" class="advanced-fields" hidden>
+          <div class="field">
+            <label class="field-label" for="taxId">Tax ID / VAT Number</label>
+            <input type="text" id="taxId" placeholder="e.g. US 12-3456789">
+          </div>
+          <div class="field">
+            <label class="field-label" for="poNumber">Purchase Order Number</label>
+            <input type="text" id="poNumber" placeholder="PO-12345">
+          </div>
+          <div class="field">
+            <label class="field-label" for="paymentTerms">Payment Terms</label>
+            <select id="paymentTerms">
+              <option value="">None</option>
+              <option value="due-receipt">Due on Receipt</option>
+              <option value="net-15">Net 15</option>
+              <option value="net-30" selected>Net 30</option>
+              <option value="net-45">Net 45</option>
+              <option value="net-60">Net 60</option>
+              <option value="custom">Custom</option>
+            </select>
+          </div>
+          <div class="field" id="customTermsField" hidden>
+            <label class="field-label" for="customTerms">Custom Terms</label>
+            <input type="text" id="customTerms" placeholder="e.g. 50% upfront, 50% on delivery">
+          </div>
+          <div class="field">
+            <label class="field-label" for="discountType">Discount</label>
+            <div class="discount-row">
+              <select id="discountType">
+                <option value="none">None</option>
+                <option value="percent">Percentage (%)</option>
+                <option value="flat">Flat Amount</option>
+              </select>
+              <input type="number" id="discountValue" value="0" min="0" step="0.01" hidden>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notes Section -->
+      <section class="form-section">
+        <h2 class="section-title">Notes</h2>
+        <textarea id="notes" rows="3" placeholder="Payment instructions, thank you message, etc."></textarea>
+      </section>
+
+      <!-- Download Button -->
+      <div class="form-actions">
+        <button type="button" id="downloadPdf" class="btn-download">Download PDF</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: Invoice Preview -->
+    <div class="preview-panel">
+      <div class="preview-sticky">
+        <div class="preview-label">Live Preview</div>
+        <div class="preview-frame">
+          <div id="invoicePreview" class="invoice">
+            <!-- Invoice preview rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
