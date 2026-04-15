@@ -4,19 +4,22 @@
 
 .invoice {
   --inv-accent: #1a1a2e;
-  --inv-accent-light: rgba(26, 26, 46, 0.06);
-  --inv-accent-border: rgba(26, 26, 46, 0.2);
-  --inv-text: #1a1a1a;
-  --inv-text-secondary: #666;
-  --inv-text-tertiary: #999;
+  --inv-accent-light: rgba(26, 26, 46, 0.04);
+  --inv-accent-border: rgba(26, 26, 46, 0.12);
+  --inv-text: #111111;
+  --inv-text-secondary: #555;
+  --inv-text-tertiary: #888;
 
   width: 100%;
-  padding: 40px 36px;
-  font-family: 'Inter', sans-serif;
+  height: 100%;
+  padding: 44px 40px;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
   font-size: 11px;
   line-height: 1.55;
   color: var(--inv-text);
   background: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header: Logo + INVOICE title */
@@ -24,7 +27,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
 .inv-logo img {
@@ -34,9 +37,9 @@
 }
 
 .inv-title {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
   color: var(--inv-accent);
   text-align: right;
 }
@@ -55,52 +58,59 @@
 
 .inv-party-label {
   font-size: 9px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--inv-text-tertiary);
   margin-bottom: 6px;
 }
 
 .inv-party-name {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--inv-text);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .inv-party-detail {
   font-size: 11px;
   color: var(--inv-text-secondary);
   white-space: pre-line;
+  line-height: 1.5;
 }
 
 /* Invoice Meta (number, date, due date) */
 .inv-meta {
   display: flex;
-  gap: 24px;
+  gap: 0;
   margin-bottom: 28px;
-  padding: 12px 16px;
-  background: var(--inv-accent-light);
-  border-radius: 6px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--inv-accent-border);
 }
 
 .inv-meta-item {
   flex: 1;
+  padding: 12px 16px;
+  background: var(--inv-accent-light);
+}
+
+.inv-meta-item + .inv-meta-item {
+  border-left: 1px solid var(--inv-accent-border);
 }
 
 .inv-meta-label {
-  font-size: 9px;
-  font-weight: 600;
+  font-size: 8px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--inv-text-tertiary);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .inv-meta-value {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--inv-text);
 }
 
@@ -112,18 +122,23 @@
 }
 
 .inv-table thead th {
-  padding: 10px 12px;
+  padding: 10px 14px;
   font-size: 9px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: #fff;
   background: var(--inv-accent);
   text-align: left;
 }
 
+.inv-table thead th:first-child {
+  border-radius: 6px 0 0 0;
+}
+
 .inv-table thead th:last-child {
   text-align: right;
+  border-radius: 0 6px 0 0;
 }
 
 .inv-table thead th:nth-child(2),
@@ -132,14 +147,14 @@
 }
 
 .inv-table tbody td {
-  padding: 10px 12px;
+  padding: 11px 14px;
   font-size: 11px;
   border-bottom: 1px solid #f0f0f0;
 }
 
 .inv-table tbody td:last-child {
   text-align: right;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .inv-table tbody td:nth-child(2),
@@ -171,12 +186,13 @@
 }
 
 .inv-totals-row.total {
-  border-top: 2px solid var(--inv-accent);
-  margin-top: 6px;
-  padding-top: 10px;
-  font-size: 16px;
-  font-weight: 700;
+  border-top: 2.5px solid var(--inv-accent);
+  margin-top: 8px;
+  padding-top: 12px;
+  font-size: 18px;
+  font-weight: 800;
   color: var(--inv-text);
+  letter-spacing: -0.02em;
 }
 
 .inv-totals-label {
@@ -187,14 +203,14 @@
 .inv-notes {
   border-top: 1px solid var(--inv-accent-border);
   padding-top: 16px;
-  margin-top: 8px;
+  margin-top: auto;
 }
 
 .inv-notes-label {
-  font-size: 9px;
-  font-weight: 600;
+  font-size: 8px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--inv-text-tertiary);
   margin-bottom: 4px;
 }
@@ -208,10 +224,20 @@
 
 /* Footer */
 .inv-footer {
-  margin-top: 24px;
+  margin-top: auto;
+  padding-top: 20px;
   text-align: center;
   font-size: 9px;
-  color: var(--inv-text-tertiary);
+  color: #bbb;
+}
+
+.inv-footer a {
+  color: #999;
+  font-weight: 600;
+}
+
+.inv-footer a:hover {
+  color: var(--inv-text-secondary);
 }
 
 /* Advanced fields in preview */

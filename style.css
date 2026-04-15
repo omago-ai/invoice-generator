@@ -4,20 +4,21 @@
 
 :root {
   --accent: #1a1a2e;
-  --accent-light: rgba(26, 26, 46, 0.08);
-  --accent-border: rgba(26, 26, 46, 0.2);
-  --text: #1a1a1a;
-  --text-secondary: #666;
-  --text-tertiary: #999;
-  --bg: #f5f5f7;
+  --accent-light: rgba(26, 26, 46, 0.05);
+  --accent-border: rgba(26, 26, 46, 0.15);
+  --text: #111111;
+  --text-secondary: #555;
+  --text-tertiary: #888;
+  --bg: #f0f0f3;
   --white: #ffffff;
-  --border: #e0e0e0;
+  --border: #ddd;
   --border-focus: #1a1a2e;
-  --radius: 8px;
-  --radius-lg: 12px;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --transition: 150ms ease;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+  --transition: 180ms ease;
 }
 
 * {
@@ -27,24 +28,24 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg);
   color: var(--text);
   font-size: 14px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Split Layout */
+/* Split Layout — balanced proportions */
 .app {
-  display: flex;
+  display: grid;
+  grid-template-columns: 480px 1fr;
   min-height: 100vh;
 }
 
 .form-panel {
-  width: 50%;
-  max-width: 600px;
-  padding: 40px 32px;
+  padding: 44px 36px;
   overflow-y: auto;
   max-height: 100vh;
   background: var(--white);
@@ -52,80 +53,91 @@ body {
 }
 
 .preview-panel {
-  flex: 1;
-  padding: 40px 32px;
+  padding: 44px 48px;
   overflow-y: auto;
   max-height: 100vh;
   background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .preview-sticky {
   position: sticky;
   top: 0;
+  width: 100%;
+  max-width: 600px;
 }
 
 .preview-label {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   color: var(--text-tertiary);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .preview-frame {
   background: var(--white);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
   aspect-ratio: 210 / 297; /* A4 ratio */
   width: 100%;
-  max-width: 520px;
 }
 
 /* Form Header */
 .form-header {
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
 .form-header h1 {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 800;
   color: var(--text);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .tagline {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-top: 4px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+.tagline a {
+  font-weight: 600;
 }
 
 /* Sections */
 .form-section {
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .section-title {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--text-tertiary);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
 }
 
 /* Fields */
 .field {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .field-label {
   display: block;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
 }
 
 input[type="text"],
@@ -135,14 +147,14 @@ input[type="date"],
 textarea,
 select {
   width: 100%;
-  padding: 9px 12px;
+  padding: 10px 14px;
   font-size: 14px;
   font-family: inherit;
   color: var(--text);
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: #fafafa;
+  border: 1.5px solid var(--border);
   border-radius: var(--radius);
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
   outline: none;
 }
 
@@ -151,17 +163,23 @@ textarea:focus,
 select:focus {
   border-color: var(--border-focus);
   box-shadow: 0 0 0 3px var(--accent-light);
+  background: var(--white);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #bbb;
 }
 
 textarea {
   resize: vertical;
-  min-height: 60px;
+  min-height: 64px;
 }
 
 .field-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 16px;
 }
 
 .field-row {
@@ -175,11 +193,11 @@ textarea {
 .logo-upload {
   border: 2px dashed var(--border);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 24px;
   text-align: center;
   cursor: pointer;
   transition: border-color var(--transition), background var(--transition);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   position: relative;
 }
 
@@ -192,18 +210,19 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .logo-icon {
-  font-size: 24px;
-  color: var(--text-tertiary);
+  font-size: 28px;
+  color: #ccc;
   font-weight: 300;
+  line-height: 1;
 }
 
 .logo-text {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-secondary);
 }
 
@@ -229,6 +248,7 @@ textarea {
   font-size: 12px;
   cursor: pointer;
   color: var(--text-secondary);
+  font-family: inherit;
 }
 
 .logo-remove:hover {
@@ -241,14 +261,14 @@ textarea {
 .color-picker-wrap {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 input[type="color"] {
-  width: 36px;
-  height: 36px;
-  padding: 2px;
-  border: 1px solid var(--border);
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  border: 1.5px solid var(--border);
   border-radius: var(--radius);
   cursor: pointer;
   background: none;
@@ -256,28 +276,29 @@ input[type="color"] {
 
 .color-hex {
   font-size: 13px;
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  color: var(--text-secondary);
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  color: var(--text-tertiary);
+  font-weight: 500;
 }
 
 /* Line Items */
 .line-items-header {
   display: grid;
-  grid-template-columns: 1fr 70px 90px 90px 32px;
+  grid-template-columns: 1fr 64px 80px 80px 32px;
   gap: 8px;
-  padding: 8px 0;
-  font-size: 11px;
-  font-weight: 600;
+  padding: 10px 0;
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--text-tertiary);
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 8px;
+  border-bottom: 1.5px solid var(--border);
+  margin-bottom: 10px;
 }
 
 .line-item-row {
   display: grid;
-  grid-template-columns: 1fr 70px 90px 90px 32px;
+  grid-template-columns: 1fr 64px 80px 80px 32px;
   gap: 8px;
   margin-bottom: 8px;
   align-items: center;
@@ -290,7 +311,7 @@ input[type="color"] {
 
 .line-item-amount {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   text-align: right;
   padding-right: 4px;
   color: var(--text);
@@ -306,7 +327,7 @@ input[type="color"] {
   border: 1px solid transparent;
   border-radius: var(--radius);
   cursor: pointer;
-  color: var(--text-tertiary);
+  color: #ccc;
   font-size: 16px;
   transition: all var(--transition);
 }
@@ -319,13 +340,13 @@ input[type="color"] {
 
 .btn-add {
   width: 100%;
-  padding: 10px;
+  padding: 11px;
   background: none;
-  border: 1px dashed var(--border);
+  border: 1.5px dashed var(--border);
   border-radius: var(--radius);
   font-size: 13px;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-weight: 600;
+  color: var(--text-tertiary);
   cursor: pointer;
   transition: all var(--transition);
   font-family: inherit;
@@ -353,10 +374,10 @@ input[type="color"] {
   background: none;
   border: none;
   font-size: 13px;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-weight: 600;
+  color: var(--text-tertiary);
   cursor: pointer;
-  padding: 8px 0;
+  padding: 10px 0;
   font-family: inherit;
   transition: color var(--transition);
 }
@@ -369,7 +390,7 @@ input[type="color"] {
   display: inline-block;
   font-size: 10px;
   transition: transform var(--transition);
-  margin-right: 4px;
+  margin-right: 6px;
 }
 
 #advancedArrow.open {
@@ -377,7 +398,7 @@ input[type="color"] {
 }
 
 .advanced-fields {
-  padding-top: 14px;
+  padding-top: 16px;
 }
 
 .discount-row {
@@ -395,63 +416,64 @@ input[type="color"] {
 
 /* Download Button */
 .form-actions {
-  padding-top: 8px;
-  padding-bottom: 40px;
+  padding-top: 12px;
+  padding-bottom: 44px;
 }
 
 .btn-download {
   width: 100%;
-  padding: 14px 24px;
+  padding: 16px 24px;
   background: var(--accent);
   color: var(--white);
   border: none;
   border-radius: var(--radius);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   font-family: inherit;
-  transition: opacity var(--transition), transform var(--transition);
+  letter-spacing: -0.01em;
+  transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 8px rgba(26, 26, 46, 0.25);
 }
 
 .btn-download:hover {
-  opacity: 0.9;
+  opacity: 0.92;
+  box-shadow: 0 4px 16px rgba(26, 26, 46, 0.3);
 }
 
 .btn-download:active {
-  transform: scale(0.99);
+  transform: scale(0.98);
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .app {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
   .form-panel {
-    width: 100%;
-    max-width: none;
     max-height: none;
     border-right: none;
     border-bottom: 1px solid var(--border);
   }
   .preview-panel {
     max-height: none;
-    padding: 24px 16px;
+    padding: 28px 20px;
   }
-  .preview-frame {
+  .preview-sticky {
     max-width: 100%;
   }
 }
 
 @media (max-width: 600px) {
   .form-panel {
-    padding: 24px 16px;
+    padding: 24px 18px;
   }
   .field-grid {
     grid-template-columns: 1fr;
   }
   .line-items-header,
   .line-item-row {
-    grid-template-columns: 1fr 60px 70px 70px 28px;
+    grid-template-columns: 1fr 56px 64px 64px 28px;
     gap: 4px;
   }
 }
