@@ -9,12 +9,12 @@
   <meta property="og:title" content="Free Invoice Generator — Create Beautiful Invoices Instantly">
   <meta property="og:description" content="Free invoice generator. Create professional invoices and download as PDF. No signup required.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://invoice.omago.ai">
+  <meta property="og:url" content="https://invoice.omago.ai/en">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="invoice.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../invoice.css">
 </head>
 <body>
   <div class="app">
@@ -270,6 +270,38 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script type="module" src="app.js"></script>
+  <script>
+window.LOCALE = {
+  dateLocale: 'en-US',
+  thousandSep: ',',
+  decimalSep: '.',
+  invoiceTitle: 'INVOICE',
+  from: 'From',
+  billTo: 'Bill To',
+  yourCompany: 'Your Company',
+  clientName: 'Client Name',
+  invoiceNo: 'Invoice No.',
+  date: 'Date',
+  dueDate: 'Due Date',
+  description: 'Description',
+  qty: 'Qty',
+  rate: 'Rate',
+  amount: 'Amount',
+  subtotal: 'Subtotal',
+  discount: 'Discount',
+  taxName: 'Tax',
+  total: 'Total',
+  notes: 'Notes',
+  taxIdLabel: 'Tax ID',
+  poNumber: 'PO Number',
+  paymentTermsLabel: 'Payment Terms',
+  lineItemPlaceholder: 'Service or product description',
+  remove: 'Remove',
+  noLineItems: 'No line items',
+  generating: 'Generating...',
+  pdfError: 'Failed to generate PDF. Please try again.'
+};
+</script>
+  <script type="module" src="../app.js"></script>
 </body>
 </html>

@@ -1,51 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Invoice Generator — Create Beautiful Invoices Instantly</title>
-  <meta name="description" content="Free invoice generator. Create professional invoices and download as PDF. No signup required.">
+  <title>เครื่องมือสร้างใบแจ้งหนี้ฟรี — สร้างใบแจ้งหนี้มืออาชีพทันที</title>
+  <meta name="description" content="เครื่องมือสร้างใบแจ้งหนี้ฟรี สร้างใบแจ้งหนี้มืออาชีพและดาวน์โหลดเป็น PDF ไม่ต้องสมัครสมาชิก">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='210' height='210' viewBox='0 0 210 210' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='210' height='210' rx='45' fill='white'/%3E%3Ccircle cx='106' cy='102' r='52' stroke='%230A0A0A' stroke-width='26'/%3E%3Cpath d='M166 153C166 163.493 157.493 172 147 172C136.507 172 128 163.493 128 153C128 142.507 136.507 134 147 134C157.493 134 166 142.507 166 153Z' fill='white'/%3E%3Cpath d='M161 153C161 160.732 154.732 167 147 167C139.268 167 133 160.732 133 153C133 145.268 139.268 139 147 139C154.732 139 161 145.268 161 153Z' fill='%2339FF14'/%3E%3C/svg%3E">
-  <meta property="og:title" content="Free Invoice Generator — Create Beautiful Invoices Instantly">
-  <meta property="og:description" content="Free invoice generator. Create professional invoices and download as PDF. No signup required.">
+  <meta property="og:title" content="เครื่องมือสร้างใบแจ้งหนี้ฟรี — สร้างใบแจ้งหนี้มืออาชีพทันที">
+  <meta property="og:description" content="เครื่องมือสร้างใบแจ้งหนี้ฟรี สร้างใบแจ้งหนี้มืออาชีพและดาวน์โหลดเป็น PDF ไม่ต้องสมัครสมาชิก">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://invoice.omago.ai">
+  <meta property="og:url" content="https://invoice.omago.ai/th">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="invoice.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../invoice.css">
 </head>
 <body>
   <div class="app">
     <!-- LEFT: Form Panel -->
     <div class="form-panel">
       <header class="form-header">
-        <h1>Free Invoice Generator</h1>
-        <p class="tagline">Create professional invoices in seconds · by <a href="https://omago.ai" target="_blank" style="color:inherit;text-decoration:none;font-weight:500;">omago.ai</a></p>
+        <h1>เครื่องมือสร้างใบแจ้งหนี้ฟรี</h1>
+        <p class="tagline">สร้างใบแจ้งหนี้มืออาชีพในไม่กี่วินาที · by <a href="https://omago.ai" target="_blank" style="color:inherit;text-decoration:none;font-weight:500;">omago.ai</a></p>
       </header>
 
       <!-- Branding Section -->
       <section class="form-section">
-        <h2 class="section-title">Branding</h2>
+        <h2 class="section-title">การสร้างแบรนด์</h2>
         <div class="logo-upload" id="logoUpload">
           <input type="file" id="logoInput" accept="image/png,image/jpeg,image/svg+xml" hidden>
           <div class="logo-placeholder" id="logoPlaceholder">
             <span class="logo-icon">+</span>
-            <span class="logo-text">Upload Logo</span>
-            <span class="logo-hint">PNG, JPG, or SVG · Recommended 400×100px</span>
+            <span class="logo-text">อัปโหลดโลโก้</span>
+            <span class="logo-hint">PNG, JPG หรือ SVG · แนะนำขนาด 400×100px</span>
           </div>
           <div class="logo-uploaded" id="logoUploaded" hidden>
-            <img id="logoPreviewThumb" class="logo-thumb" alt="Logo preview">
+            <img id="logoPreviewThumb" class="logo-thumb" alt="ตัวอย่างโลโก้">
             <div class="logo-controls">
-              <label class="logo-size-label" for="logoSize">Size</label>
+              <label class="logo-size-label" for="logoSize">ขนาด</label>
               <input type="range" id="logoSize" min="40" max="200" value="140" class="logo-size-slider">
-              <button type="button" id="logoRemove" class="logo-remove-btn">Remove</button>
+              <button type="button" id="logoRemove" class="logo-remove-btn">ลบ</button>
             </div>
           </div>
         </div>
         <div class="field">
-          <label class="field-label">Accent Color</label>
+          <label class="field-label">สีเน้น</label>
           <div class="color-picker" id="colorPicker">
             <button type="button" class="color-picker-trigger" id="colorPickerTrigger">
               <span class="color-picker-preview" id="colorPreview" style="background:#111111"></span>
@@ -80,23 +80,23 @@
           </div>
         </div>
         <div class="field">
-          <label class="field-label" for="fontFamily">Font Style</label>
+          <label class="field-label" for="fontFamily">สไตล์ฟอนต์</label>
           <div class="font-picker" id="fontPicker">
             <label class="font-option active" data-font="'Plus Jakarta Sans'">
               <input type="radio" name="fontFamily" value="'Plus Jakarta Sans'" checked hidden>
-              <span class="font-preview" style="font-family:'Plus Jakarta Sans'">Modern</span>
+              <span class="font-preview" style="font-family:'Plus Jakarta Sans'">โมเดิร์น</span>
             </label>
             <label class="font-option" data-font="'Inter'">
               <input type="radio" name="fontFamily" value="'Inter'" hidden>
-              <span class="font-preview" style="font-family:'Inter'">Clean</span>
+              <span class="font-preview" style="font-family:'Inter'">คลีน</span>
             </label>
             <label class="font-option" data-font="'Lora'">
               <input type="radio" name="fontFamily" value="'Lora'" hidden>
-              <span class="font-preview" style="font-family:'Lora'">Classic</span>
+              <span class="font-preview" style="font-family:'Lora'">คลาสสิก</span>
             </label>
             <label class="font-option" data-font="'Space Grotesk'">
               <input type="radio" name="fontFamily" value="'Space Grotesk'" hidden>
-              <span class="font-preview" style="font-family:'Space Grotesk'">Tech</span>
+              <span class="font-preview" style="font-family:'Space Grotesk'">เทค</span>
             </label>
           </div>
         </div>
@@ -104,58 +104,59 @@
 
       <!-- From Section -->
       <section class="form-section">
-        <h2 class="section-title">From</h2>
+        <h2 class="section-title">จาก</h2>
         <div class="field">
-          <label class="field-label" for="fromName">Name / Company</label>
-          <input type="text" id="fromName" placeholder="Your company name">
+          <label class="field-label" for="fromName">ชื่อ / บริษัท</label>
+          <input type="text" id="fromName" placeholder="ชื่อบริษัทของคุณ">
         </div>
         <div class="field">
-          <label class="field-label" for="fromAddress">Address</label>
-          <textarea id="fromAddress" rows="2" placeholder="Street, City, State, ZIP"></textarea>
+          <label class="field-label" for="fromAddress">ที่อยู่</label>
+          <textarea id="fromAddress" rows="2" placeholder="ถนน, เมือง, จังหวัด, รหัสไปรษณีย์"></textarea>
         </div>
         <div class="field">
-          <label class="field-label" for="fromEmail">Email</label>
+          <label class="field-label" for="fromEmail">อีเมล</label>
           <input type="email" id="fromEmail" placeholder="you@company.com">
         </div>
       </section>
 
       <!-- Bill To Section -->
       <section class="form-section">
-        <h2 class="section-title">Bill To</h2>
+        <h2 class="section-title">เรียกเก็บเงิน</h2>
         <div class="field">
-          <label class="field-label" for="toName">Name / Company</label>
-          <input type="text" id="toName" placeholder="Client name or company">
+          <label class="field-label" for="toName">ชื่อ / บริษัท</label>
+          <input type="text" id="toName" placeholder="ชื่อลูกค้าหรือบริษัท">
         </div>
         <div class="field">
-          <label class="field-label" for="toAddress">Address</label>
-          <textarea id="toAddress" rows="2" placeholder="Street, City, State, ZIP"></textarea>
+          <label class="field-label" for="toAddress">ที่อยู่</label>
+          <textarea id="toAddress" rows="2" placeholder="ถนน, เมือง, จังหวัด, รหัสไปรษณีย์"></textarea>
         </div>
         <div class="field">
-          <label class="field-label" for="toEmail">Email</label>
+          <label class="field-label" for="toEmail">อีเมล</label>
           <input type="email" id="toEmail" placeholder="client@company.com">
         </div>
       </section>
 
       <!-- Invoice Details Section -->
       <section class="form-section">
-        <h2 class="section-title">Invoice Details</h2>
+        <h2 class="section-title">รายละเอียดใบแจ้งหนี้</h2>
         <div class="field-grid">
           <div class="field">
-            <label class="field-label" for="invoiceNumber">Invoice Number</label>
+            <label class="field-label" for="invoiceNumber">เลขที่ใบแจ้งหนี้</label>
             <input type="text" id="invoiceNumber" value="INV-001">
           </div>
           <div class="field">
-            <label class="field-label" for="currency">Currency</label>
+            <label class="field-label" for="currency">สกุลเงิน</label>
             <select id="currency">
+              <option value="THB" selected>THB (฿)</option>
               <option value="USD">USD ($)</option>
               <option value="EUR">EUR (€)</option>
+              <option value="JPY">JPY (¥)</option>
+              <option value="CNY">CNY (¥)</option>
+              <option value="SGD">SGD (S$)</option>
               <option value="GBP">GBP (£)</option>
               <option value="HKD">HKD (HK$)</option>
               <option value="CAD">CAD (CA$)</option>
               <option value="AUD">AUD (A$)</option>
-              <option value="JPY">JPY (¥)</option>
-              <option value="SGD">SGD (S$)</option>
-              <option value="CNY">CNY (¥)</option>
               <option value="KRW">KRW (₩)</option>
               <option value="TWD">TWD (NT$)</option>
               <option value="CHF">CHF (CHF)</option>
@@ -163,11 +164,11 @@
             </select>
           </div>
           <div class="field">
-            <label class="field-label" for="invoiceDate">Invoice Date</label>
+            <label class="field-label" for="invoiceDate">วันที่ออกใบแจ้งหนี้</label>
             <input type="date" id="invoiceDate">
           </div>
           <div class="field">
-            <label class="field-label" for="dueDate">Due Date</label>
+            <label class="field-label" for="dueDate">วันครบกำหนด</label>
             <input type="date" id="dueDate">
           </div>
         </div>
@@ -175,26 +176,26 @@
 
       <!-- Line Items Section -->
       <section class="form-section">
-        <h2 class="section-title">Line Items</h2>
+        <h2 class="section-title">รายการสินค้า/บริการ</h2>
         <div class="line-items-header">
-          <span class="li-desc">Description</span>
-          <span class="li-qty">Qty</span>
-          <span class="li-rate">Rate</span>
-          <span class="li-amount">Amount</span>
+          <span class="li-desc">รายละเอียด</span>
+          <span class="li-qty">จำนวน</span>
+          <span class="li-rate">ราคา</span>
+          <span class="li-amount">จำนวนเงิน</span>
           <span class="li-remove"></span>
         </div>
         <div id="lineItems">
           <!-- Line item rows inserted by JS -->
         </div>
-        <button type="button" id="addLineItem" class="btn-add">+ Add Line Item</button>
+        <button type="button" id="addLineItem" class="btn-add">+ เพิ่มรายการ</button>
       </section>
 
       <!-- Totals Section -->
       <section class="form-section">
         <div class="totals-form">
           <div class="field-row">
-            <label class="field-label" for="taxRate">Tax (%)</label>
-            <input type="number" id="taxRate" value="0" min="0" max="100" step="0.01">
+            <label class="field-label" for="taxRate">ภาษีมูลค่าเพิ่ม (%)</label>
+            <input type="number" id="taxRate" value="7" min="0" max="100" step="0.01">
           </div>
         </div>
       </section>
@@ -202,40 +203,40 @@
       <!-- Advanced Toggle -->
       <section class="form-section">
         <button type="button" id="advancedToggle" class="btn-advanced">
-          <span id="advancedArrow">▶</span> Advanced Options
+          <span id="advancedArrow">▶</span> ตัวเลือกขั้นสูง
         </button>
         <div id="advancedFields" class="advanced-fields" hidden>
           <div class="field">
-            <label class="field-label" for="taxId">Tax ID / VAT Number</label>
-            <input type="text" id="taxId" placeholder="e.g. US 12-3456789">
+            <label class="field-label" for="taxId">เลขประจำตัวผู้เสียภาษี</label>
+            <input type="text" id="taxId" placeholder="เช่น 0105xxxxxxxxx">
           </div>
           <div class="field">
-            <label class="field-label" for="poNumber">Purchase Order Number</label>
+            <label class="field-label" for="poNumber">เลขที่ใบสั่งซื้อ</label>
             <input type="text" id="poNumber" placeholder="PO-12345">
           </div>
           <div class="field">
-            <label class="field-label" for="paymentTerms">Payment Terms</label>
+            <label class="field-label" for="paymentTerms">เงื่อนไขการชำระเงิน</label>
             <select id="paymentTerms">
-              <option value="">None</option>
-              <option value="due-receipt">Due on Receipt</option>
-              <option value="net-15">Net 15</option>
-              <option value="net-30" selected>Net 30</option>
-              <option value="net-45">Net 45</option>
-              <option value="net-60">Net 60</option>
-              <option value="custom">Custom</option>
+              <option value="">ไม่มี</option>
+              <option value="due-receipt">ชำระเมื่อรับ</option>
+              <option value="net-15">15 วัน</option>
+              <option value="net-30" selected>30 วัน</option>
+              <option value="net-45">45 วัน</option>
+              <option value="net-60">60 วัน</option>
+              <option value="custom">กำหนดเอง</option>
             </select>
           </div>
           <div class="field" id="customTermsField" hidden>
-            <label class="field-label" for="customTerms">Custom Terms</label>
-            <input type="text" id="customTerms" placeholder="e.g. 50% upfront, 50% on delivery">
+            <label class="field-label" for="customTerms">เงื่อนไขที่กำหนดเอง</label>
+            <input type="text" id="customTerms" placeholder="เช่น ชำระ 50% ล่วงหน้า และ 50% เมื่อส่งงาน">
           </div>
           <div class="field">
-            <label class="field-label" for="discountType">Discount</label>
+            <label class="field-label" for="discountType">ส่วนลด</label>
             <div class="discount-row">
               <select id="discountType">
-                <option value="none">None</option>
-                <option value="percent">Percentage (%)</option>
-                <option value="flat">Flat Amount</option>
+                <option value="none">ไม่มี</option>
+                <option value="percent">เปอร์เซ็นต์ (%)</option>
+                <option value="flat">จำนวนคงที่</option>
               </select>
               <input type="number" id="discountValue" value="0" min="0" step="0.01" hidden>
             </div>
@@ -245,20 +246,20 @@
 
       <!-- Notes Section -->
       <section class="form-section">
-        <h2 class="section-title">Notes</h2>
-        <textarea id="notes" rows="3" placeholder="Payment instructions, thank you message, etc."></textarea>
+        <h2 class="section-title">หมายเหตุ</h2>
+        <textarea id="notes" rows="3" placeholder="คำแนะนำการชำระเงิน, ข้อความขอบคุณ ฯลฯ"></textarea>
       </section>
 
       <!-- Download Button -->
       <div class="form-actions">
-        <button type="button" id="downloadPdf" class="btn-download">Download PDF</button>
+        <button type="button" id="downloadPdf" class="btn-download">ดาวน์โหลด PDF</button>
       </div>
     </div>
 
     <!-- RIGHT: Invoice Preview -->
     <div class="preview-panel">
       <div class="preview-sticky">
-        <div class="preview-label">Live Preview</div>
+        <div class="preview-label">ตัวอย่างแบบเรียลไทม์</div>
         <div class="preview-frame">
           <div id="invoicePreview" class="invoice">
             <!-- Invoice preview rendered by JS -->
@@ -270,6 +271,39 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script type="module" src="app.js"></script>
+  <script>
+window.LOCALE = {
+  dateLocale: 'th-TH',
+  buddhistYear: true,
+  thousandSep: ',',
+  decimalSep: '.',
+  invoiceTitle: 'ใบแจ้งหนี้',
+  from: 'จาก',
+  billTo: 'เรียกเก็บเงิน',
+  yourCompany: 'ชื่อบริษัทของคุณ',
+  clientName: 'ชื่อลูกค้า',
+  invoiceNo: 'เลขที่ใบแจ้งหนี้',
+  date: 'วันที่',
+  dueDate: 'วันครบกำหนด',
+  description: 'รายละเอียด',
+  qty: 'จำนวน',
+  rate: 'ราคา',
+  amount: 'จำนวนเงิน',
+  subtotal: 'ยอมรวม',
+  discount: 'ส่วนลด',
+  taxName: 'ภาษีมูลค่าเพิ่ม',
+  total: 'ยอดรวมทั้งสิ้น',
+  notes: 'หมายเหตุ',
+  taxIdLabel: 'เลขประจำตัวผู้เสียภาษี',
+  poNumber: 'เลขที่ใบสั่งซื้อ',
+  paymentTermsLabel: 'เงื่อนไขการชำระเงิน',
+  lineItemPlaceholder: 'รายละเอียดบริการหรือสินค้า',
+  remove: 'ลบ',
+  noLineItems: 'ไม่มีรายการ',
+  generating: 'กำลังสร้าง...',
+  pdfError: 'ไม่สามารถสร้าง PDF ได้ กรุณาลองอีกครั้ง'
+};
+</script>
+  <script type="module" src="../app.js"></script>
 </body>
 </html>
