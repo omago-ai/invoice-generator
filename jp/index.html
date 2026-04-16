@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tạo Hóa Đơn Miễn Phí — Tạo Hóa Đơn Chuyên Nghiệp Ngay</title>
-  <meta name="description" content="Công cụ tạo hóa đơn miễn phí. Tạo hóa đơn chuyên nghiệp và tải xuống dạng PDF. Không cần đăng ký.">
+  <title>無料請求書作成ツール — プロの請求書を即座に作成</title>
+  <meta name="description" content="無料の請求書作成ツール。プロフェッショナルな請求書を作成してPDFでダウンロード。登録不要。">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='210' height='210' viewBox='0 0 210 210' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='210' height='210' rx='45' fill='white'/%3E%3Ccircle cx='106' cy='102' r='52' stroke='%230A0A0A' stroke-width='26'/%3E%3Cpath d='M166 153C166 163.493 157.493 172 147 172C136.507 172 128 163.493 128 153C128 142.507 136.507 134 147 134C157.493 134 166 142.507 166 153Z' fill='white'/%3E%3Cpath d='M161 153C161 160.732 154.732 167 147 167C139.268 167 133 160.732 133 153C133 145.268 139.268 139 147 139C154.732 139 161 145.268 161 153Z' fill='%2339FF14'/%3E%3C/svg%3E">
-  <meta property="og:title" content="Tạo Hóa Đơn Miễn Phí — Tạo Hóa Đơn Chuyên Nghiệp Ngay">
-  <meta property="og:description" content="Công cụ tạo hóa đơn miễn phí. Tạo hóa đơn chuyên nghiệp và tải xuống dạng PDF. Không cần đăng ký.">
+  <meta property="og:title" content="無料請求書作成ツール — プロの請求書を即座に作成">
+  <meta property="og:description" content="無料の請求書作成ツール。プロフェッショナルな請求書を作成してPDFでダウンロード。登録不要。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://invoice.omago.ai/vi">
+  <meta property="og:url" content="https://invoice.omago.ai/jp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../invoice.css">
 </head>
@@ -21,31 +21,31 @@
     <!-- LEFT: Form Panel -->
     <div class="form-panel">
       <header class="form-header">
-        <h1>Tạo Hóa Đơn Miễn Phí</h1>
-        <p class="tagline">Tạo hóa đơn chuyên nghiệp trong vài giây · bởi <a href="https://omago.ai" target="_blank" style="color:inherit;text-decoration:none;font-weight:500;">omago.ai</a></p>
+        <h1>無料請求書作成ツール</h1>
+        <p class="tagline">数秒でプロの請求書を作成 · by <a href="https://omago.ai" target="_blank" style="color:inherit;text-decoration:none;font-weight:500;">omago.ai</a></p>
       </header>
 
       <!-- Branding Section -->
       <section class="form-section">
-        <h2 class="section-title">Thương hiệu</h2>
+        <h2 class="section-title">ブランディング</h2>
         <div class="logo-upload" id="logoUpload">
           <input type="file" id="logoInput" accept="image/png,image/jpeg,image/svg+xml" hidden>
           <div class="logo-placeholder" id="logoPlaceholder">
             <span class="logo-icon">+</span>
-            <span class="logo-text">Tải lên Logo</span>
-            <span class="logo-hint">PNG, JPG, hoặc SVG · Khuyến nghị 400×100px</span>
+            <span class="logo-text">ロゴをアップロード</span>
+            <span class="logo-hint">PNG、JPG、SVG · 推奨サイズ 400×100px</span>
           </div>
           <div class="logo-uploaded" id="logoUploaded" hidden>
-            <img id="logoPreviewThumb" class="logo-thumb" alt="Xem trước logo">
+            <img id="logoPreviewThumb" class="logo-thumb" alt="ロゴプレビュー">
             <div class="logo-controls">
-              <label class="logo-size-label" for="logoSize">Kích thước</label>
+              <label class="logo-size-label" for="logoSize">サイズ</label>
               <input type="range" id="logoSize" min="40" max="200" value="140" class="logo-size-slider">
-              <button type="button" id="logoRemove" class="logo-remove-btn">Xóa</button>
+              <button type="button" id="logoRemove" class="logo-remove-btn">削除</button>
             </div>
           </div>
         </div>
         <div class="field">
-          <label class="field-label">Màu nhấn</label>
+          <label class="field-label">アクセントカラー</label>
           <div class="color-picker" id="colorPicker">
             <button type="button" class="color-picker-trigger" id="colorPickerTrigger">
               <span class="color-picker-preview" id="colorPreview" style="background:#111111"></span>
@@ -80,23 +80,23 @@
           </div>
         </div>
         <div class="field">
-          <label class="field-label" for="fontFamily">Kiểu chữ</label>
+          <label class="field-label" for="fontFamily">フォントスタイル</label>
           <div class="font-picker" id="fontPicker">
             <label class="font-option active" data-font="'Plus Jakarta Sans'">
               <input type="radio" name="fontFamily" value="'Plus Jakarta Sans'" checked hidden>
-              <span class="font-preview" style="font-family:'Plus Jakarta Sans'">Hiện đại</span>
+              <span class="font-preview" style="font-family:'Plus Jakarta Sans'">モダン</span>
             </label>
             <label class="font-option" data-font="'Inter'">
               <input type="radio" name="fontFamily" value="'Inter'" hidden>
-              <span class="font-preview" style="font-family:'Inter'">Tối giản</span>
+              <span class="font-preview" style="font-family:'Inter'">クリーン</span>
             </label>
             <label class="font-option" data-font="'Lora'">
               <input type="radio" name="fontFamily" value="'Lora'" hidden>
-              <span class="font-preview" style="font-family:'Lora'">Cổ điển</span>
+              <span class="font-preview" style="font-family:'Lora'">クラシック</span>
             </label>
             <label class="font-option" data-font="'Space Grotesk'">
               <input type="radio" name="fontFamily" value="'Space Grotesk'" hidden>
-              <span class="font-preview" style="font-family:'Space Grotesk'">Công nghệ</span>
+              <span class="font-preview" style="font-family:'Space Grotesk'">テック</span>
             </label>
           </div>
         </div>
@@ -104,71 +104,70 @@
 
       <!-- From Section -->
       <section class="form-section">
-        <h2 class="section-title">Bên bán</h2>
+        <h2 class="section-title">請求元</h2>
         <div class="field">
-          <label class="field-label" for="fromName">Tên / Công ty</label>
-          <input type="text" id="fromName" placeholder="Tên công ty của bạn">
+          <label class="field-label" for="fromName">名前 / 会社名</label>
+          <input type="text" id="fromName" placeholder="御社名">
         </div>
         <div class="field">
-          <label class="field-label" for="fromAddress">Địa chỉ</label>
-          <textarea id="fromAddress" rows="2" placeholder="Số nhà, Đường, Phường/Xã, Tỉnh/TP"></textarea>
+          <label class="field-label" for="fromAddress">住所</label>
+          <textarea id="fromAddress" rows="2" placeholder="都道府県、市区町村、番地"></textarea>
         </div>
         <div class="field">
-          <label class="field-label" for="fromEmail">Email</label>
-          <input type="email" id="fromEmail" placeholder="ban@congty.com">
+          <label class="field-label" for="fromEmail">メールアドレス</label>
+          <input type="email" id="fromEmail" placeholder="you@company.com">
         </div>
       </section>
 
       <!-- Bill To Section -->
       <section class="form-section">
-        <h2 class="section-title">Bên mua</h2>
+        <h2 class="section-title">請求先</h2>
         <div class="field">
-          <label class="field-label" for="toName">Tên / Công ty</label>
-          <input type="text" id="toName" placeholder="Tên khách hàng hoặc công ty">
+          <label class="field-label" for="toName">名前 / 会社名</label>
+          <input type="text" id="toName" placeholder="お客様名または会社名">
         </div>
         <div class="field">
-          <label class="field-label" for="toAddress">Địa chỉ</label>
-          <textarea id="toAddress" rows="2" placeholder="Số nhà, Đường, Phường/Xã, Tỉnh/TP"></textarea>
+          <label class="field-label" for="toAddress">住所</label>
+          <textarea id="toAddress" rows="2" placeholder="都道府県、市区町村、番地"></textarea>
         </div>
         <div class="field">
-          <label class="field-label" for="toEmail">Email</label>
-          <input type="email" id="toEmail" placeholder="khachhang@congty.com">
+          <label class="field-label" for="toEmail">メールアドレス</label>
+          <input type="email" id="toEmail" placeholder="client@company.com">
         </div>
       </section>
 
       <!-- Invoice Details Section -->
       <section class="form-section">
-        <h2 class="section-title">Thông tin hóa đơn</h2>
+        <h2 class="section-title">請求書詳細</h2>
         <div class="field-grid">
           <div class="field">
-            <label class="field-label" for="invoiceNumber">Số hóa đơn</label>
+            <label class="field-label" for="invoiceNumber">請求書番号</label>
             <input type="text" id="invoiceNumber" value="INV-001">
           </div>
           <div class="field">
-            <label class="field-label" for="currency">Tiền tệ</label>
+            <label class="field-label" for="currency">通貨</label>
             <select id="currency">
-              <option value="VND" selected>VND (₫)</option>
+              <option value="JPY" selected>JPY (¥)</option>
               <option value="USD">USD ($)</option>
               <option value="EUR">EUR (€)</option>
-              <option value="JPY">JPY (¥)</option>
               <option value="CNY">CNY (¥)</option>
+              <option value="KRW">KRW (₩)</option>
               <option value="GBP">GBP (£)</option>
               <option value="HKD">HKD (HK$)</option>
               <option value="CAD">CAD (CA$)</option>
               <option value="AUD">AUD (A$)</option>
               <option value="SGD">SGD (S$)</option>
-              <option value="KRW">KRW (₩)</option>
               <option value="TWD">TWD (NT$)</option>
               <option value="CHF">CHF (CHF)</option>
               <option value="NZD">NZD (NZ$)</option>
             </select>
           </div>
           <div class="field">
-            <label class="field-label" for="invoiceDate">Ngày lập</label>
+            <label class="field-label" for="invoiceDate">発行日</label>
             <input type="date" id="invoiceDate">
           </div>
           <div class="field">
-            <label class="field-label" for="dueDate">Hạn thanh toán</label>
+            <label class="field-label" for="dueDate">支払期限</label>
             <input type="date" id="dueDate">
           </div>
         </div>
@@ -176,25 +175,25 @@
 
       <!-- Line Items Section -->
       <section class="form-section">
-        <h2 class="section-title">Danh mục hàng hóa / dịch vụ</h2>
+        <h2 class="section-title">明細</h2>
         <div class="line-items-header">
-          <span class="li-desc">Mô tả</span>
-          <span class="li-qty">SL</span>
-          <span class="li-rate">Đơn giá</span>
-          <span class="li-amount">Thành tiền</span>
+          <span class="li-desc">品目</span>
+          <span class="li-qty">数量</span>
+          <span class="li-rate">単価</span>
+          <span class="li-amount">金額</span>
           <span class="li-remove"></span>
         </div>
         <div id="lineItems">
           <!-- Line item rows inserted by JS -->
         </div>
-        <button type="button" id="addLineItem" class="btn-add">+ Thêm dòng</button>
+        <button type="button" id="addLineItem" class="btn-add">+ 明細を追加</button>
       </section>
 
       <!-- Totals Section -->
       <section class="form-section">
         <div class="totals-form">
           <div class="field-row">
-            <label class="field-label" for="taxRate">Thuế GTGT (%)</label>
+            <label class="field-label" for="taxRate">消費税 (%)</label>
             <input type="number" id="taxRate" value="10" min="0" max="100" step="0.01">
           </div>
         </div>
@@ -203,40 +202,40 @@
       <!-- Advanced Toggle -->
       <section class="form-section">
         <button type="button" id="advancedToggle" class="btn-advanced">
-          <span id="advancedArrow">▶</span> Tùy chọn nâng cao
+          <span id="advancedArrow">▶</span> 詳細オプション
         </button>
         <div id="advancedFields" class="advanced-fields" hidden>
           <div class="field">
-            <label class="field-label" for="taxId">Mã số thuế</label>
-            <input type="text" id="taxId" placeholder="VD: 0123456789">
+            <label class="field-label" for="taxId">登録番号（インボイス制度）</label>
+            <input type="text" id="taxId" placeholder="例：T1234567890123">
           </div>
           <div class="field">
-            <label class="field-label" for="poNumber">Số đơn đặt hàng</label>
+            <label class="field-label" for="poNumber">注文書番号</label>
             <input type="text" id="poNumber" placeholder="PO-12345">
           </div>
           <div class="field">
-            <label class="field-label" for="paymentTerms">Điều khoản thanh toán</label>
+            <label class="field-label" for="paymentTerms">支払条件</label>
             <select id="paymentTerms">
-              <option value="">Không</option>
-              <option value="due-receipt">Thanh toán khi nhận</option>
-              <option value="net-15">15 ngày</option>
-              <option value="net-30" selected>30 ngày</option>
-              <option value="net-45">45 ngày</option>
-              <option value="net-60">60 ngày</option>
-              <option value="custom">Tùy chỉnh</option>
+              <option value="">なし</option>
+              <option value="due-receipt">受領時支払い</option>
+              <option value="net-15">15日以内</option>
+              <option value="net-30">30日以内</option>
+              <option value="net-end-month" selected>月末締め翌月払い</option>
+              <option value="net-60">60日以内</option>
+              <option value="custom">その他</option>
             </select>
           </div>
           <div class="field" id="customTermsField" hidden>
-            <label class="field-label" for="customTerms">Điều khoản tùy chỉnh</label>
-            <input type="text" id="customTerms" placeholder="VD: 50% trước, 50% khi giao hàng">
+            <label class="field-label" for="customTerms">支払条件（その他）</label>
+            <input type="text" id="customTerms" placeholder="例：前払い50%、納品時50%">
           </div>
           <div class="field">
-            <label class="field-label" for="discountType">Giảm giá</label>
+            <label class="field-label" for="discountType">値引き</label>
             <div class="discount-row">
               <select id="discountType">
-                <option value="none">Không</option>
-                <option value="percent">Phần trăm (%)</option>
-                <option value="flat">Số tiền cố định</option>
+                <option value="none">なし</option>
+                <option value="percent">割合 (%)</option>
+                <option value="flat">定額値引き</option>
               </select>
               <input type="number" id="discountValue" value="0" min="0" step="0.01" hidden>
             </div>
@@ -246,20 +245,20 @@
 
       <!-- Notes Section -->
       <section class="form-section">
-        <h2 class="section-title">Ghi chú</h2>
-        <textarea id="notes" rows="3" placeholder="Hướng dẫn thanh toán, lời cảm ơn, v.v."></textarea>
+        <h2 class="section-title">備考</h2>
+        <textarea id="notes" rows="3" placeholder="支払い方法、お礼のメッセージなど。"></textarea>
       </section>
 
       <!-- Download Button -->
       <div class="form-actions">
-        <button type="button" id="downloadPdf" class="btn-download">Tải xuống PDF</button>
+        <button type="button" id="downloadPdf" class="btn-download">PDFをダウンロード</button>
       </div>
     </div>
 
     <!-- RIGHT: Invoice Preview -->
     <div class="preview-panel">
       <div class="preview-sticky">
-        <div class="preview-label">Xem trước</div>
+        <div class="preview-label">プレビュー</div>
         <div class="preview-frame">
           <div id="invoicePreview" class="invoice">
             <!-- Invoice preview rendered by JS -->
@@ -273,34 +272,34 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
 window.LOCALE = {
-  dateLocale: 'vi-VN',
-  thousandSep: '.',
-  decimalSep: ',',
-  invoiceTitle: 'HÓA ĐƠN',
-  from: 'Bên bán',
-  billTo: 'Bên mua',
-  yourCompany: 'Tên công ty',
-  clientName: 'Tên khách hàng',
-  invoiceNo: 'Số hóa đơn',
-  date: 'Ngày',
-  dueDate: 'Hạn thanh toán',
-  description: 'Mô tả',
-  qty: 'SL',
-  rate: 'Đơn giá',
-  amount: 'Thành tiền',
-  subtotal: 'Tạm tính',
-  discount: 'Giảm giá',
-  taxName: 'Thuế GTGT',
-  total: 'Tổng cộng',
-  notes: 'Ghi chú',
-  taxIdLabel: 'Mã số thuế',
-  poNumber: 'Số đơn đặt hàng',
-  paymentTermsLabel: 'Điều khoản thanh toán',
-  lineItemPlaceholder: 'Mô tả dịch vụ hoặc sản phẩm',
-  remove: 'Xóa',
-  noLineItems: 'Chưa có mục nào',
-  generating: 'Đang tạo...',
-  pdfError: 'Không thể tạo PDF. Vui lòng thử lại.'
+  dateLocale: 'ja-JP',
+  thousandSep: ',',
+  decimalSep: '.',
+  invoiceTitle: '請求書',
+  from: '請求元',
+  billTo: '請求先',
+  yourCompany: '御社名',
+  clientName: 'お客様名',
+  invoiceNo: '請求書番号',
+  date: '発行日',
+  dueDate: '支払期限',
+  description: '品目',
+  qty: '数量',
+  rate: '単価',
+  amount: '金額',
+  subtotal: '小計',
+  discount: '値引き',
+  taxName: '消費税',
+  total: '合計',
+  notes: '備考',
+  taxIdLabel: '登録番号',
+  poNumber: '注文書番号',
+  paymentTermsLabel: '支払条件',
+  lineItemPlaceholder: 'サービスまたは製品の説明',
+  remove: '削除',
+  noLineItems: '明細なし',
+  generating: '作成中...',
+  pdfError: 'PDF の作成に失敗しました。もう一度お試しください。'
 };
 </script>
   <script type="module" src="../app.js"></script>

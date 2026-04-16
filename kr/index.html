@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>無料請求書作成ツール — プロの請求書を即座に作成</title>
-  <meta name="description" content="無料の請求書作成ツール。プロフェッショナルな請求書を作成してPDFでダウンロード。登録不要。">
+  <title>무료 청구서 생성기 — 전문 청구서를 즉시 만드세요</title>
+  <meta name="description" content="무료 청구서 생성기. 전문 청구서를 작성하고 PDF로 다운로드하세요. 회원가입 불필요.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='210' height='210' viewBox='0 0 210 210' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='210' height='210' rx='45' fill='white'/%3E%3Ccircle cx='106' cy='102' r='52' stroke='%230A0A0A' stroke-width='26'/%3E%3Cpath d='M166 153C166 163.493 157.493 172 147 172C136.507 172 128 163.493 128 153C128 142.507 136.507 134 147 134C157.493 134 166 142.507 166 153Z' fill='white'/%3E%3Cpath d='M161 153C161 160.732 154.732 167 147 167C139.268 167 133 160.732 133 153C133 145.268 139.268 139 147 139C154.732 139 161 145.268 161 153Z' fill='%2339FF14'/%3E%3C/svg%3E">
-  <meta property="og:title" content="無料請求書作成ツール — プロの請求書を即座に作成">
-  <meta property="og:description" content="無料の請求書作成ツール。プロフェッショナルな請求書を作成してPDFでダウンロード。登録不要。">
+  <meta property="og:title" content="무료 청구서 생성기 — 전문 청구서를 즉시 만드세요">
+  <meta property="og:description" content="무료 청구서 생성기. 전문 청구서를 작성하고 PDF로 다운로드하세요. 회원가입 불필요.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://invoice.omago.ai/ja">
+  <meta property="og:url" content="https://invoice.omago.ai/kr">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../invoice.css">
 </head>
@@ -21,31 +21,31 @@
     <!-- LEFT: Form Panel -->
     <div class="form-panel">
       <header class="form-header">
-        <h1>無料請求書作成ツール</h1>
-        <p class="tagline">数秒でプロの請求書を作成 · by <a href="https://omago.ai" target="_blank" style="color:inherit;text-decoration:none;font-weight:500;">omago.ai</a></p>
+        <h1>무료 청구서 생성기</h1>
+        <p class="tagline">몇 초 만에 전문 청구서 작성 · by <a href="https://omago.ai" target="_blank" style="color:inherit;text-decoration:none;font-weight:500;">omago.ai</a></p>
       </header>
 
       <!-- Branding Section -->
       <section class="form-section">
-        <h2 class="section-title">ブランディング</h2>
+        <h2 class="section-title">브랜딩</h2>
         <div class="logo-upload" id="logoUpload">
           <input type="file" id="logoInput" accept="image/png,image/jpeg,image/svg+xml" hidden>
           <div class="logo-placeholder" id="logoPlaceholder">
             <span class="logo-icon">+</span>
-            <span class="logo-text">ロゴをアップロード</span>
-            <span class="logo-hint">PNG、JPG、SVG · 推奨サイズ 400×100px</span>
+            <span class="logo-text">로고 업로드</span>
+            <span class="logo-hint">PNG, JPG, SVG · 권장 크기 400×100px</span>
           </div>
           <div class="logo-uploaded" id="logoUploaded" hidden>
-            <img id="logoPreviewThumb" class="logo-thumb" alt="ロゴプレビュー">
+            <img id="logoPreviewThumb" class="logo-thumb" alt="로고 미리보기">
             <div class="logo-controls">
-              <label class="logo-size-label" for="logoSize">サイズ</label>
+              <label class="logo-size-label" for="logoSize">크기</label>
               <input type="range" id="logoSize" min="40" max="200" value="140" class="logo-size-slider">
-              <button type="button" id="logoRemove" class="logo-remove-btn">削除</button>
+              <button type="button" id="logoRemove" class="logo-remove-btn">제거</button>
             </div>
           </div>
         </div>
         <div class="field">
-          <label class="field-label">アクセントカラー</label>
+          <label class="field-label">강조 색상</label>
           <div class="color-picker" id="colorPicker">
             <button type="button" class="color-picker-trigger" id="colorPickerTrigger">
               <span class="color-picker-preview" id="colorPreview" style="background:#111111"></span>
@@ -80,23 +80,23 @@
           </div>
         </div>
         <div class="field">
-          <label class="field-label" for="fontFamily">フォントスタイル</label>
+          <label class="field-label" for="fontFamily">폰트 스타일</label>
           <div class="font-picker" id="fontPicker">
             <label class="font-option active" data-font="'Plus Jakarta Sans'">
               <input type="radio" name="fontFamily" value="'Plus Jakarta Sans'" checked hidden>
-              <span class="font-preview" style="font-family:'Plus Jakarta Sans'">モダン</span>
+              <span class="font-preview" style="font-family:'Plus Jakarta Sans'">모던</span>
             </label>
             <label class="font-option" data-font="'Inter'">
               <input type="radio" name="fontFamily" value="'Inter'" hidden>
-              <span class="font-preview" style="font-family:'Inter'">クリーン</span>
+              <span class="font-preview" style="font-family:'Inter'">클린</span>
             </label>
             <label class="font-option" data-font="'Lora'">
               <input type="radio" name="fontFamily" value="'Lora'" hidden>
-              <span class="font-preview" style="font-family:'Lora'">クラシック</span>
+              <span class="font-preview" style="font-family:'Lora'">클래식</span>
             </label>
             <label class="font-option" data-font="'Space Grotesk'">
               <input type="radio" name="fontFamily" value="'Space Grotesk'" hidden>
-              <span class="font-preview" style="font-family:'Space Grotesk'">テック</span>
+              <span class="font-preview" style="font-family:'Space Grotesk'">테크</span>
             </label>
           </div>
         </div>
@@ -104,54 +104,54 @@
 
       <!-- From Section -->
       <section class="form-section">
-        <h2 class="section-title">請求元</h2>
+        <h2 class="section-title">공급자</h2>
         <div class="field">
-          <label class="field-label" for="fromName">名前 / 会社名</label>
-          <input type="text" id="fromName" placeholder="御社名">
+          <label class="field-label" for="fromName">이름 / 회사명</label>
+          <input type="text" id="fromName" placeholder="회사명을 입력하세요">
         </div>
         <div class="field">
-          <label class="field-label" for="fromAddress">住所</label>
-          <textarea id="fromAddress" rows="2" placeholder="都道府県、市区町村、番地"></textarea>
+          <label class="field-label" for="fromAddress">주소</label>
+          <textarea id="fromAddress" rows="2" placeholder="도로명, 시/도, 우편번호"></textarea>
         </div>
         <div class="field">
-          <label class="field-label" for="fromEmail">メールアドレス</label>
+          <label class="field-label" for="fromEmail">이메일</label>
           <input type="email" id="fromEmail" placeholder="you@company.com">
         </div>
       </section>
 
       <!-- Bill To Section -->
       <section class="form-section">
-        <h2 class="section-title">請求先</h2>
+        <h2 class="section-title">공급받는자</h2>
         <div class="field">
-          <label class="field-label" for="toName">名前 / 会社名</label>
-          <input type="text" id="toName" placeholder="お客様名または会社名">
+          <label class="field-label" for="toName">이름 / 회사명</label>
+          <input type="text" id="toName" placeholder="거래처명 또는 회사명">
         </div>
         <div class="field">
-          <label class="field-label" for="toAddress">住所</label>
-          <textarea id="toAddress" rows="2" placeholder="都道府県、市区町村、番地"></textarea>
+          <label class="field-label" for="toAddress">주소</label>
+          <textarea id="toAddress" rows="2" placeholder="도로명, 시/도, 우편번호"></textarea>
         </div>
         <div class="field">
-          <label class="field-label" for="toEmail">メールアドレス</label>
+          <label class="field-label" for="toEmail">이메일</label>
           <input type="email" id="toEmail" placeholder="client@company.com">
         </div>
       </section>
 
       <!-- Invoice Details Section -->
       <section class="form-section">
-        <h2 class="section-title">請求書詳細</h2>
+        <h2 class="section-title">청구서 정보</h2>
         <div class="field-grid">
           <div class="field">
-            <label class="field-label" for="invoiceNumber">請求書番号</label>
+            <label class="field-label" for="invoiceNumber">청구서 번호</label>
             <input type="text" id="invoiceNumber" value="INV-001">
           </div>
           <div class="field">
-            <label class="field-label" for="currency">通貨</label>
+            <label class="field-label" for="currency">통화</label>
             <select id="currency">
-              <option value="JPY" selected>JPY (¥)</option>
+              <option value="KRW" selected>KRW (₩)</option>
               <option value="USD">USD ($)</option>
-              <option value="EUR">EUR (€)</option>
+              <option value="JPY">JPY (¥)</option>
               <option value="CNY">CNY (¥)</option>
-              <option value="KRW">KRW (₩)</option>
+              <option value="EUR">EUR (€)</option>
               <option value="GBP">GBP (£)</option>
               <option value="HKD">HKD (HK$)</option>
               <option value="CAD">CAD (CA$)</option>
@@ -163,11 +163,11 @@
             </select>
           </div>
           <div class="field">
-            <label class="field-label" for="invoiceDate">発行日</label>
+            <label class="field-label" for="invoiceDate">발행일</label>
             <input type="date" id="invoiceDate">
           </div>
           <div class="field">
-            <label class="field-label" for="dueDate">支払期限</label>
+            <label class="field-label" for="dueDate">납부 기한</label>
             <input type="date" id="dueDate">
           </div>
         </div>
@@ -175,25 +175,25 @@
 
       <!-- Line Items Section -->
       <section class="form-section">
-        <h2 class="section-title">明細</h2>
+        <h2 class="section-title">품목</h2>
         <div class="line-items-header">
-          <span class="li-desc">品目</span>
-          <span class="li-qty">数量</span>
-          <span class="li-rate">単価</span>
-          <span class="li-amount">金額</span>
+          <span class="li-desc">설명</span>
+          <span class="li-qty">수량</span>
+          <span class="li-rate">단가</span>
+          <span class="li-amount">금액</span>
           <span class="li-remove"></span>
         </div>
         <div id="lineItems">
           <!-- Line item rows inserted by JS -->
         </div>
-        <button type="button" id="addLineItem" class="btn-add">+ 明細を追加</button>
+        <button type="button" id="addLineItem" class="btn-add">+ 항목 추가</button>
       </section>
 
       <!-- Totals Section -->
       <section class="form-section">
         <div class="totals-form">
           <div class="field-row">
-            <label class="field-label" for="taxRate">消費税 (%)</label>
+            <label class="field-label" for="taxRate">부가가치세 (%)</label>
             <input type="number" id="taxRate" value="10" min="0" max="100" step="0.01">
           </div>
         </div>
@@ -202,40 +202,40 @@
       <!-- Advanced Toggle -->
       <section class="form-section">
         <button type="button" id="advancedToggle" class="btn-advanced">
-          <span id="advancedArrow">▶</span> 詳細オプション
+          <span id="advancedArrow">▶</span> 고급 옵션
         </button>
         <div id="advancedFields" class="advanced-fields" hidden>
           <div class="field">
-            <label class="field-label" for="taxId">登録番号（インボイス制度）</label>
-            <input type="text" id="taxId" placeholder="例：T1234567890123">
+            <label class="field-label" for="taxId">사업자등록번호</label>
+            <input type="text" id="taxId" placeholder="예: 123-45-67890">
           </div>
           <div class="field">
-            <label class="field-label" for="poNumber">注文書番号</label>
+            <label class="field-label" for="poNumber">발주서 번호</label>
             <input type="text" id="poNumber" placeholder="PO-12345">
           </div>
           <div class="field">
-            <label class="field-label" for="paymentTerms">支払条件</label>
+            <label class="field-label" for="paymentTerms">결제 조건</label>
             <select id="paymentTerms">
-              <option value="">なし</option>
-              <option value="due-receipt">受領時支払い</option>
-              <option value="net-15">15日以内</option>
-              <option value="net-30">30日以内</option>
-              <option value="net-end-month" selected>月末締め翌月払い</option>
-              <option value="net-60">60日以内</option>
-              <option value="custom">その他</option>
+              <option value="">없음</option>
+              <option value="due-receipt">수령 즉시</option>
+              <option value="net-15">15일 이내</option>
+              <option value="net-30" selected>30일 이내</option>
+              <option value="net-45">45일 이내</option>
+              <option value="net-60">60일 이내</option>
+              <option value="custom">직접 입력</option>
             </select>
           </div>
           <div class="field" id="customTermsField" hidden>
-            <label class="field-label" for="customTerms">支払条件（その他）</label>
-            <input type="text" id="customTerms" placeholder="例：前払い50%、納品時50%">
+            <label class="field-label" for="customTerms">직접 입력</label>
+            <input type="text" id="customTerms" placeholder="예: 계약금 50%, 납품 후 50%">
           </div>
           <div class="field">
-            <label class="field-label" for="discountType">値引き</label>
+            <label class="field-label" for="discountType">할인</label>
             <div class="discount-row">
               <select id="discountType">
-                <option value="none">なし</option>
-                <option value="percent">割合 (%)</option>
-                <option value="flat">定額値引き</option>
+                <option value="none">없음</option>
+                <option value="percent">비율 (%)</option>
+                <option value="flat">정액 할인</option>
               </select>
               <input type="number" id="discountValue" value="0" min="0" step="0.01" hidden>
             </div>
@@ -245,20 +245,20 @@
 
       <!-- Notes Section -->
       <section class="form-section">
-        <h2 class="section-title">備考</h2>
-        <textarea id="notes" rows="3" placeholder="支払い方法、お礼のメッセージなど。"></textarea>
+        <h2 class="section-title">비고</h2>
+        <textarea id="notes" rows="3" placeholder="결제 안내, 감사 메시지 등을 입력하세요."></textarea>
       </section>
 
       <!-- Download Button -->
       <div class="form-actions">
-        <button type="button" id="downloadPdf" class="btn-download">PDFをダウンロード</button>
+        <button type="button" id="downloadPdf" class="btn-download">PDF 다운로드</button>
       </div>
     </div>
 
     <!-- RIGHT: Invoice Preview -->
     <div class="preview-panel">
       <div class="preview-sticky">
-        <div class="preview-label">プレビュー</div>
+        <div class="preview-label">미리보기</div>
         <div class="preview-frame">
           <div id="invoicePreview" class="invoice">
             <!-- Invoice preview rendered by JS -->
@@ -272,34 +272,34 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
 window.LOCALE = {
-  dateLocale: 'ja-JP',
+  dateLocale: 'ko-KR',
   thousandSep: ',',
   decimalSep: '.',
-  invoiceTitle: '請求書',
-  from: '請求元',
-  billTo: '請求先',
-  yourCompany: '御社名',
-  clientName: 'お客様名',
-  invoiceNo: '請求書番号',
-  date: '発行日',
-  dueDate: '支払期限',
-  description: '品目',
-  qty: '数量',
-  rate: '単価',
-  amount: '金額',
-  subtotal: '小計',
-  discount: '値引き',
-  taxName: '消費税',
-  total: '合計',
-  notes: '備考',
-  taxIdLabel: '登録番号',
-  poNumber: '注文書番号',
-  paymentTermsLabel: '支払条件',
-  lineItemPlaceholder: 'サービスまたは製品の説明',
-  remove: '削除',
-  noLineItems: '明細なし',
-  generating: '作成中...',
-  pdfError: 'PDF の作成に失敗しました。もう一度お試しください。'
+  invoiceTitle: '청구서',
+  from: '공급자',
+  billTo: '공급받는자',
+  yourCompany: '회사명',
+  clientName: '거래처명',
+  invoiceNo: '청구서 번호',
+  date: '발행일',
+  dueDate: '납부 기한',
+  description: '품목',
+  qty: '수량',
+  rate: '단가',
+  amount: '금액',
+  subtotal: '소계',
+  discount: '할인',
+  taxName: '부가가치세',
+  total: '합계',
+  notes: '비고',
+  taxIdLabel: '사업자등록번호',
+  poNumber: '발주서 번호',
+  paymentTermsLabel: '결제 조건',
+  lineItemPlaceholder: '서비스 또는 제품 설명',
+  remove: '삭제',
+  noLineItems: '항목 없음',
+  generating: '생성 중...',
+  pdfError: 'PDF 생성에 실패했습니다. 다시 시도해주세요.'
 };
 </script>
   <script type="module" src="../app.js"></script>
