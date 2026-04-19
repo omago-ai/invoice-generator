@@ -110,6 +110,21 @@ body {
   font-weight: 600;
 }
 
+.lang-switcher {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 8px;
+}
+.lang-switcher a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.lang-switcher a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
 /* Sections */
 .form-section {
   margin-bottom: 30px;
