@@ -32,6 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
   renderLineItems();
   updatePreview();
   bindEvents();
+
+  // Set cookie when user clicks a lang-switcher link so geo-redirect doesn't override their choice
+  document.querySelectorAll('.lang-switcher a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.cookie = 'lang_chosen=1; path=/; max-age=86400; SameSite=Lax';
+    });
+  });
 });
 
 function setDefaultDates() {
