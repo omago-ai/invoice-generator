@@ -172,6 +172,22 @@
             <label class="field-label" for="dueDate">วันครบกำหนด</label>
             <input type="date" id="dueDate">
           </div>
+          <div class="field">
+            <label class="field-label" for="paymentTerms">เงื่อนไขการชำระเงิน</label>
+            <select id="paymentTerms">
+              <option value="">ไม่มี</option>
+              <option value="due-receipt">ชำระเมื่อรับ</option>
+              <option value="net-15">15 วัน</option>
+              <option value="net-30" selected>30 วัน</option>
+              <option value="net-45">45 วัน</option>
+              <option value="net-60">60 วัน</option>
+              <option value="custom">กำหนดเอง</option>
+            </select>
+          </div>
+          <div class="field" id="customTermsField" hidden>
+            <label class="field-label" for="customTerms">เงื่อนไขที่กำหนดเอง</label>
+            <input type="text" id="customTerms" placeholder="เช่น ชำระ 50% ล่วงหน้า และ 50% เมื่อส่งงาน">
+          </div>
         </div>
       </section>
 
@@ -214,22 +230,6 @@
           <div class="field">
             <label class="field-label" for="poNumber">เลขที่ใบสั่งซื้อ</label>
             <input type="text" id="poNumber" placeholder="PO-12345">
-          </div>
-          <div class="field">
-            <label class="field-label" for="paymentTerms">เงื่อนไขการชำระเงิน</label>
-            <select id="paymentTerms">
-              <option value="">ไม่มี</option>
-              <option value="due-receipt">ชำระเมื่อรับ</option>
-              <option value="net-15">15 วัน</option>
-              <option value="net-30" selected>30 วัน</option>
-              <option value="net-45">45 วัน</option>
-              <option value="net-60">60 วัน</option>
-              <option value="custom">กำหนดเอง</option>
-            </select>
-          </div>
-          <div class="field" id="customTermsField" hidden>
-            <label class="field-label" for="customTerms">เงื่อนไขที่กำหนดเอง</label>
-            <input type="text" id="customTerms" placeholder="เช่น ชำระ 50% ล่วงหน้า และ 50% เมื่อส่งงาน">
           </div>
           <div class="field">
             <label class="field-label" for="discountType">ส่วนลด</label>

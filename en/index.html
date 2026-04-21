@@ -171,6 +171,22 @@
             <label class="field-label" for="dueDate">Due Date</label>
             <input type="date" id="dueDate">
           </div>
+          <div class="field">
+            <label class="field-label" for="paymentTerms">Payment Terms</label>
+            <select id="paymentTerms">
+              <option value="">None</option>
+              <option value="due-receipt">Due on Receipt</option>
+              <option value="net-15">Net 15</option>
+              <option value="net-30" selected>Net 30</option>
+              <option value="net-45">Net 45</option>
+              <option value="net-60">Net 60</option>
+              <option value="custom">Custom</option>
+            </select>
+          </div>
+          <div class="field" id="customTermsField" hidden>
+            <label class="field-label" for="customTerms">Custom Terms</label>
+            <input type="text" id="customTerms" placeholder="e.g. 50% upfront, 50% on delivery">
+          </div>
         </div>
       </section>
 
@@ -213,22 +229,6 @@
           <div class="field">
             <label class="field-label" for="poNumber">Purchase Order Number</label>
             <input type="text" id="poNumber" placeholder="PO-12345">
-          </div>
-          <div class="field">
-            <label class="field-label" for="paymentTerms">Payment Terms</label>
-            <select id="paymentTerms">
-              <option value="">None</option>
-              <option value="due-receipt">Due on Receipt</option>
-              <option value="net-15">Net 15</option>
-              <option value="net-30" selected>Net 30</option>
-              <option value="net-45">Net 45</option>
-              <option value="net-60">Net 60</option>
-              <option value="custom">Custom</option>
-            </select>
-          </div>
-          <div class="field" id="customTermsField" hidden>
-            <label class="field-label" for="customTerms">Custom Terms</label>
-            <input type="text" id="customTerms" placeholder="e.g. 50% upfront, 50% on delivery">
           </div>
           <div class="field">
             <label class="field-label" for="discountType">Discount</label>

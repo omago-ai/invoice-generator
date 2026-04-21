@@ -171,6 +171,22 @@
             <label class="field-label" for="dueDate">납부 기한</label>
             <input type="date" id="dueDate">
           </div>
+          <div class="field">
+            <label class="field-label" for="paymentTerms">결제 조건</label>
+            <select id="paymentTerms">
+              <option value="">없음</option>
+              <option value="due-receipt">수령 즉시</option>
+              <option value="net-15">15일 이내</option>
+              <option value="net-30" selected>30일 이내</option>
+              <option value="net-45">45일 이내</option>
+              <option value="net-60">60일 이내</option>
+              <option value="custom">직접 입력</option>
+            </select>
+          </div>
+          <div class="field" id="customTermsField" hidden>
+            <label class="field-label" for="customTerms">직접 입력</label>
+            <input type="text" id="customTerms" placeholder="예: 계약금 50%, 납품 후 50%">
+          </div>
         </div>
       </section>
 
@@ -213,22 +229,6 @@
           <div class="field">
             <label class="field-label" for="poNumber">발주서 번호</label>
             <input type="text" id="poNumber" placeholder="PO-12345">
-          </div>
-          <div class="field">
-            <label class="field-label" for="paymentTerms">결제 조건</label>
-            <select id="paymentTerms">
-              <option value="">없음</option>
-              <option value="due-receipt">수령 즉시</option>
-              <option value="net-15">15일 이내</option>
-              <option value="net-30" selected>30일 이내</option>
-              <option value="net-45">45일 이내</option>
-              <option value="net-60">60일 이내</option>
-              <option value="custom">직접 입력</option>
-            </select>
-          </div>
-          <div class="field" id="customTermsField" hidden>
-            <label class="field-label" for="customTerms">직접 입력</label>
-            <input type="text" id="customTerms" placeholder="예: 계약금 50%, 납품 후 50%">
           </div>
           <div class="field">
             <label class="field-label" for="discountType">할인</label>

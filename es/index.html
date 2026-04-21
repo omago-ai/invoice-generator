@@ -176,6 +176,22 @@
             <label class="field-label" for="dueDate">Fecha de Vencimiento</label>
             <input type="date" id="dueDate">
           </div>
+          <div class="field">
+            <label class="field-label" for="paymentTerms">Condiciones de Pago</label>
+            <select id="paymentTerms">
+              <option value="">Ninguno</option>
+              <option value="due-receipt">Al recibir</option>
+              <option value="net-15">Neto 15</option>
+              <option value="net-30" selected>Neto 30</option>
+              <option value="net-45">Neto 45</option>
+              <option value="net-60">Neto 60</option>
+              <option value="custom">Personalizado</option>
+            </select>
+          </div>
+          <div class="field" id="customTermsField" hidden>
+            <label class="field-label" for="customTerms">Condiciones Personalizadas</label>
+            <input type="text" id="customTerms" placeholder="ej. 50% por adelantado, 50% al entregar">
+          </div>
         </div>
       </section>
 
@@ -218,22 +234,6 @@
           <div class="field">
             <label class="field-label" for="poNumber">Orden de Compra</label>
             <input type="text" id="poNumber" placeholder="OC-12345">
-          </div>
-          <div class="field">
-            <label class="field-label" for="paymentTerms">Condiciones de Pago</label>
-            <select id="paymentTerms">
-              <option value="">Ninguno</option>
-              <option value="due-receipt">Al recibir</option>
-              <option value="net-15">Neto 15</option>
-              <option value="net-30" selected>Neto 30</option>
-              <option value="net-45">Neto 45</option>
-              <option value="net-60">Neto 60</option>
-              <option value="custom">Personalizado</option>
-            </select>
-          </div>
-          <div class="field" id="customTermsField" hidden>
-            <label class="field-label" for="customTerms">Condiciones Personalizadas</label>
-            <input type="text" id="customTerms" placeholder="ej. 50% por adelantado, 50% al entregar">
           </div>
           <div class="field">
             <label class="field-label" for="discountType">Descuento</label>

@@ -171,6 +171,22 @@
             <label class="field-label" for="dueDate">支払期限</label>
             <input type="date" id="dueDate">
           </div>
+          <div class="field">
+            <label class="field-label" for="paymentTerms">支払条件</label>
+            <select id="paymentTerms">
+              <option value="">なし</option>
+              <option value="due-receipt">受領時支払い</option>
+              <option value="net-15">15日以内</option>
+              <option value="net-30">30日以内</option>
+              <option value="net-end-month" selected>月末締め翌月払い</option>
+              <option value="net-60">60日以内</option>
+              <option value="custom">その他</option>
+            </select>
+          </div>
+          <div class="field" id="customTermsField" hidden>
+            <label class="field-label" for="customTerms">支払条件（その他）</label>
+            <input type="text" id="customTerms" placeholder="例：前払い50%、納品時50%">
+          </div>
         </div>
       </section>
 
@@ -213,22 +229,6 @@
           <div class="field">
             <label class="field-label" for="poNumber">注文書番号</label>
             <input type="text" id="poNumber" placeholder="PO-12345">
-          </div>
-          <div class="field">
-            <label class="field-label" for="paymentTerms">支払条件</label>
-            <select id="paymentTerms">
-              <option value="">なし</option>
-              <option value="due-receipt">受領時支払い</option>
-              <option value="net-15">15日以内</option>
-              <option value="net-30">30日以内</option>
-              <option value="net-end-month" selected>月末締め翌月払い</option>
-              <option value="net-60">60日以内</option>
-              <option value="custom">その他</option>
-            </select>
-          </div>
-          <div class="field" id="customTermsField" hidden>
-            <label class="field-label" for="customTerms">支払条件（その他）</label>
-            <input type="text" id="customTerms" placeholder="例：前払い50%、納品時50%">
           </div>
           <div class="field">
             <label class="field-label" for="discountType">値引き</label>

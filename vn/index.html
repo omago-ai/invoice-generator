@@ -172,6 +172,22 @@
             <label class="field-label" for="dueDate">Hạn thanh toán</label>
             <input type="date" id="dueDate">
           </div>
+          <div class="field">
+            <label class="field-label" for="paymentTerms">Điều khoản thanh toán</label>
+            <select id="paymentTerms">
+              <option value="">Không</option>
+              <option value="due-receipt">Thanh toán khi nhận</option>
+              <option value="net-15">15 ngày</option>
+              <option value="net-30" selected>30 ngày</option>
+              <option value="net-45">45 ngày</option>
+              <option value="net-60">60 ngày</option>
+              <option value="custom">Tùy chỉnh</option>
+            </select>
+          </div>
+          <div class="field" id="customTermsField" hidden>
+            <label class="field-label" for="customTerms">Điều khoản tùy chỉnh</label>
+            <input type="text" id="customTerms" placeholder="VD: 50% trước, 50% khi giao hàng">
+          </div>
         </div>
       </section>
 
@@ -214,22 +230,6 @@
           <div class="field">
             <label class="field-label" for="poNumber">Số đơn đặt hàng</label>
             <input type="text" id="poNumber" placeholder="PO-12345">
-          </div>
-          <div class="field">
-            <label class="field-label" for="paymentTerms">Điều khoản thanh toán</label>
-            <select id="paymentTerms">
-              <option value="">Không</option>
-              <option value="due-receipt">Thanh toán khi nhận</option>
-              <option value="net-15">15 ngày</option>
-              <option value="net-30" selected>30 ngày</option>
-              <option value="net-45">45 ngày</option>
-              <option value="net-60">60 ngày</option>
-              <option value="custom">Tùy chỉnh</option>
-            </select>
-          </div>
-          <div class="field" id="customTermsField" hidden>
-            <label class="field-label" for="customTerms">Điều khoản tùy chỉnh</label>
-            <input type="text" id="customTerms" placeholder="VD: 50% trước, 50% khi giao hàng">
           </div>
           <div class="field">
             <label class="field-label" for="discountType">Giảm giá</label>

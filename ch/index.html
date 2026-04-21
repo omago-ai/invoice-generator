@@ -171,6 +171,22 @@
             <label class="field-label" for="dueDate">到期日</label>
             <input type="date" id="dueDate">
           </div>
+          <div class="field">
+            <label class="field-label" for="paymentTerms">付款條件</label>
+            <select id="paymentTerms">
+              <option value="">無</option>
+              <option value="due-receipt">即時付款</option>
+              <option value="net-15">淨15天</option>
+              <option value="net-30" selected>淨30天</option>
+              <option value="net-45">淨45天</option>
+              <option value="net-60">淨60天</option>
+              <option value="custom">自訂</option>
+            </select>
+          </div>
+          <div class="field" id="customTermsField" hidden>
+            <label class="field-label" for="customTerms">自訂條款</label>
+            <input type="text" id="customTerms" placeholder="例如：先付50%，交貨後付50%">
+          </div>
         </div>
       </section>
 
@@ -213,22 +229,6 @@
           <div class="field">
             <label class="field-label" for="poNumber">採購訂單編號</label>
             <input type="text" id="poNumber" placeholder="PO-12345">
-          </div>
-          <div class="field">
-            <label class="field-label" for="paymentTerms">付款條件</label>
-            <select id="paymentTerms">
-              <option value="">無</option>
-              <option value="due-receipt">即時付款</option>
-              <option value="net-15">淨15天</option>
-              <option value="net-30" selected>淨30天</option>
-              <option value="net-45">淨45天</option>
-              <option value="net-60">淨60天</option>
-              <option value="custom">自訂</option>
-            </select>
-          </div>
-          <div class="field" id="customTermsField" hidden>
-            <label class="field-label" for="customTerms">自訂條款</label>
-            <input type="text" id="customTerms" placeholder="例如：先付50%，交貨後付50%">
           </div>
           <div class="field">
             <label class="field-label" for="discountType">折扣</label>
