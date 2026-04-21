@@ -115,20 +115,24 @@ function bindEvents() {
     applyDueDateFromTerm();
   });
 
-  // Invoice date change → recompute due date if term is computable
-  $('invoiceDate').addEventListener('change', () => {
-    applyDueDateFromTerm();
-  });
+  // Invoice date change → recompute due date if term is computable.
+  // Use both 'input' and 'change' because date pickers across browsers
+  // don't agree on which one fires when a date is picked vs. typed.
+  $('invoiceDate').addEventListener('input', applyDueDateFromTerm);
+  $('invoiceDate').addEventListener('change', applyDueDateFromTerm);
 
-  // Due date manual edit → switch term to Custom (override behavior)
-  $('dueDate').addEventListener('change', () => {
+  // Due date manual edit → switch term to Custom (override behavior).
+  // Same dual-event reasoning.
+  const handleDueDateEdit = () => {
     if (isProgrammaticDateWrite) return;
     const termSelect = $('paymentTerms');
     if (termSelect.value !== 'custom') {
       termSelect.value = 'custom';
       $('customTermsField').hidden = false;
     }
-  });
+  };
+  $('dueDate').addEventListener('input', handleDueDateEdit);
+  $('dueDate').addEventListener('change', handleDueDateEdit);
 
   // Discount type toggle
   $('discountType').addEventListener('change', (e) => {
