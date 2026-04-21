@@ -44,6 +44,43 @@ function formatDisplayDate(dateStr) {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
+// --- Payment terms → due date ---
+let isProgrammaticDateWrite = false;
+
+function computeDueDate(invoiceDateStr, term) {
+  if (!invoiceDateStr) return null;
+  const d = new Date(invoiceDateStr + 'T00:00:00');
+  if (isNaN(d)) return null;
+  switch (term) {
+    case 'due-receipt':
+      return formatDate(d);
+    case 'net-15':
+      d.setDate(d.getDate() + 15);
+      return formatDate(d);
+    case 'net-30':
+      d.setDate(d.getDate() + 30);
+      return formatDate(d);
+    case 'net-45':
+      d.setDate(d.getDate() + 45);
+      return formatDate(d);
+    case 'net-60':
+      d.setDate(d.getDate() + 60);
+      return formatDate(d);
+    default:
+      return null; // 'custom' or '' (None) → don't touch Due Date
+  }
+}
+
+function applyDueDateFromTerm() {
+  const invoiceDate = $('invoiceDate').value;
+  const term = $('paymentTerms').value;
+  const newDue = computeDueDate(invoiceDate, term);
+  if (newDue === null) return;
+  isProgrammaticDateWrite = true;
+  $('dueDate').value = newDue;
+  isProgrammaticDateWrite = false;
+}
+
 // --- Events ---
 function bindEvents() {
   // All form inputs trigger preview update
@@ -67,10 +104,26 @@ function bindEvents() {
   // Advanced toggle
   $('advancedToggle').addEventListener('click', toggleAdvanced);
 
-  // Payment terms custom field
+  // Payment terms: toggle custom field + auto-fill due date
   $('paymentTerms').addEventListener('change', (e) => {
     const customField = $('customTermsField');
     customField.hidden = e.target.value !== 'custom';
+    applyDueDateFromTerm();
+  });
+
+  // Invoice date change → recompute due date if term is computable
+  $('invoiceDate').addEventListener('change', () => {
+    applyDueDateFromTerm();
+  });
+
+  // Due date manual edit → switch term to Custom (override behavior)
+  $('dueDate').addEventListener('change', () => {
+    if (isProgrammaticDateWrite) return;
+    const termSelect = $('paymentTerms');
+    if (termSelect.value !== 'custom') {
+      termSelect.value = 'custom';
+      $('customTermsField').hidden = false;
+    }
   });
 
   // Discount type toggle
