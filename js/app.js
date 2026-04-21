@@ -34,7 +34,12 @@ function setDefaultDates() {
 }
 
 function formatDate(d) {
-  return d.toISOString().split('T')[0];
+  // Use local calendar parts, not UTC — otherwise evening hours in positive-UTC
+  // timezones roll the stored date back a day, making due-date arithmetic off-by-one.
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
 }
 
 function formatDisplayDate(dateStr) {
