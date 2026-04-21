@@ -28,10 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setDefaultDates() {
   const today = new Date();
-  const due = new Date(today);
-  due.setDate(due.getDate() + 30);
   $('invoiceDate').value = formatDate(today);
-  $('dueDate').value = formatDate(due);
+  // Due Date is driven by the default Payment Terms value (Net 30) via applyDueDateFromTerm().
+  applyDueDateFromTerm();
 }
 
 function formatDate(d) {
