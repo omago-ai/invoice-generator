@@ -315,6 +315,10 @@ function updatePreview() {
     <div class="inv-totals-row">
       <span class="inv-totals-label">${discountLabel}</span>
       <span>-${symbol}${formatNumber(discount)}</span>
+    </div>
+    <div class="inv-totals-row">
+      <span class="inv-totals-label">Subtotal after discount</span>
+      <span>${symbol}${formatNumber(afterDiscount)}</span>
     </div>`;
   }
 
