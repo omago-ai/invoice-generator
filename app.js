@@ -43,10 +43,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setDefaultDates() {
   const today = new Date();
-  const due = new Date(today);
-  due.setDate(due.getDate() + 30);
   $('invoiceDate').value = formatDate(today);
-  $('dueDate').value = formatDate(due);
+  // Due Date is driven by the default Payment Terms value (Net 30) via applyDueDateFromTerm().
+  applyDueDateFromTerm();
+}
+
+// --- Payment terms → due date ---
+let isProgrammaticDateWrite = false;
+
+function computeDueDate(invoiceDateStr, term) {
+  if (!invoiceDateStr) return null;
+  const d = new Date(invoiceDateStr + 'T00:00:00');
+  if (isNaN(d)) return null;
+  switch (term) {
+    case 'due-receipt':
+      return formatDate(d);
+    case 'net-15':
+      d.setDate(d.getDate() + 15);
+      return formatDate(d);
+    case 'net-30':
+      d.setDate(d.getDate() + 30);
+      return formatDate(d);
+    case 'net-45':
+      d.setDate(d.getDate() + 45);
+      return formatDate(d);
+    case 'net-60':
+      d.setDate(d.getDate() + 60);
+      return formatDate(d);
+    default:
+      return null;
+  }
+}
+
+function applyDueDateFromTerm() {
+  const invoiceDate = $('invoiceDate').value;
+  const term = $('paymentTerms').value;
+  const newDue = computeDueDate(invoiceDate, term);
+  if (newDue === null) return;
+  isProgrammaticDateWrite = true;
+  $('dueDate').value = newDue;
+  isProgrammaticDateWrite = false;
 }
 
 function formatDate(d) {
@@ -187,11 +223,29 @@ function bindEvents() {
   // Advanced toggle
   $('advancedToggle').addEventListener('click', toggleAdvanced);
 
-  // Payment terms custom field
+  // Payment terms: toggle custom field + auto-fill due date
   $('paymentTerms').addEventListener('change', (e) => {
     const customField = $('customTermsField');
     customField.hidden = e.target.value !== 'custom';
+    applyDueDateFromTerm();
   });
+
+  // Invoice date change → recompute due date if term is computable.
+  // Use both 'input' and 'change' — date pickers vary in which they fire.
+  $('invoiceDate').addEventListener('input', applyDueDateFromTerm);
+  $('invoiceDate').addEventListener('change', applyDueDateFromTerm);
+
+  // Due date manual edit → switch term to Custom (override behavior).
+  const handleDueDateEdit = () => {
+    if (isProgrammaticDateWrite) return;
+    const termSelect = $('paymentTerms');
+    if (termSelect.value !== 'custom') {
+      termSelect.value = 'custom';
+      $('customTermsField').hidden = false;
+    }
+  };
+  $('dueDate').addEventListener('input', handleDueDateEdit);
+  $('dueDate').addEventListener('change', handleDueDateEdit);
 
   // Discount type toggle
   $('discountType').addEventListener('change', (e) => {
@@ -378,10 +432,15 @@ function updatePreview() {
     const discountLabel = $('discountType').value === 'percent'
       ? `${discountWord} (${$('discountValue').value}%)`
       : discountWord;
+    const afterDiscountLabel = L.subtotalAfterDiscount || 'Subtotal after discount';
     totalsHtml += `
     <div class="inv-totals-row">
       <span class="inv-totals-label">${discountLabel}</span>
       <span>-${symbol}${formatNumber(discount)}</span>
+    </div>
+    <div class="inv-totals-row">
+      <span class="inv-totals-label">${afterDiscountLabel}</span>
+      <span>${symbol}${formatNumber(afterDiscount)}</span>
     </div>`;
   }
 
