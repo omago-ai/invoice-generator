@@ -439,6 +439,7 @@ input[type="color"] {
   }
   .preview-frame {
     max-width: 100%;
+    aspect-ratio: auto;
   }
 }
 
